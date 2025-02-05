@@ -107,12 +107,12 @@ WSGI_APPLICATION = 'droppcv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'py_muktinath',
-        'HOST':'db',
-        'PORT':'3306',
-        'USER':'root',
-        'PASSWORD':'admin123',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'postgres',
+        'HOST':'aws-0-us-west-1.pooler.supabase.com',
+        'PORT':'6543',
+        'USER':'postgres.lelwpyaefpsejtirrurs',
+        'PASSWORD':'Ujjwal123@123',
         'options':{
         'init_command': "SET sql_mode='STRICT_ALL_TABLES'"
         }
