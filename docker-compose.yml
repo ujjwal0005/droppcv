@@ -1,0 +1,19 @@
+version: '3'
+services:
+  orbit_saas:
+    build: .
+    container_name: orbit_saas
+    hostname: orbit_saas
+    ports:
+      - "2222:8000"
+    volumes:
+      - .:/var/www/html/app
+      - ./static:/var/www/html/app/staticfiles
+      - ./media:/var/www/html/app/media
+    restart: unless-stopped
+    command: python3 manage.py runserver 0.0.0.0:8000
+    networks:
+      - vani
+networks:
+  vani:
+    driver: bridge
