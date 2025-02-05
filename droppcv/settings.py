@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_z@a@%s#r@_)+@ppf7q$me75i033)$o5#do7uwva*uku9-_xya
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -98,10 +98,24 @@ WSGI_APPLICATION = 'droppcv.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'py_muktinath',
+        'HOST':'db',
+        'PORT':'3306',
+        'USER':'root',
+        'PASSWORD':'admin123',
+        'options':{
+        'init_command': "SET sql_mode='STRICT_ALL_TABLES'"
+        }
     }
 }
 
