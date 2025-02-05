@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install required system dependencies
 RUN apt-get update && apt-get install -y \
     gcc build-essential vim curl \
-    iputils-ping tzdata \
+    iputils-ping tzdata postgresql-server-dev-all \
     libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0 default-libmysqlclient-dev && \
     ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
